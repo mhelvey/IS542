@@ -3,25 +3,25 @@ from django.db import models
 # Create your models here.
 class Student(models.Model):
     id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=200)
-    address = models.CharField(max_length=500)
-    phone = models.CharField(max_length=15)
+    name = models.TextField(max_length=200)
+    address = models.TextField(max_length=500)
+    phone = models.TextField(max_length=15)
     email = models.EmailField(max_length=254)
-    student_num = models.CharField(max_length=30)
+    student_num = models.TextField(max_length=30)
     average_mark = models.DecimalField(max_digits=7, decimal_places=2)
 
 class Professor(models.Model):
     id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=200)
-    address = models.CharField(max_length=500)
-    phone = models.CharField(max_length=15)
+    name = models.TextField(max_length=200)
+    address = models.TextField(max_length=500)
+    phone = models.TextField(max_length=15)
     email = models.EmailField(max_length=254)
     salary = models.DecimalField(max_digits=9, decimal_places=2)
 
 class Seminar(models.Model):
     id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=200)
-    seminar_num = models.CharField(max_length=30)
+    name = models.TextField(max_length=200)
+    seminar_num = models.TextField(max_length=30)
     fees = models.DecimalField(max_digits=7, decimal_places=2)
     professor = models.ForeignKey(to=Professor, blank=True)
 
