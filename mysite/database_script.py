@@ -62,3 +62,28 @@ except hmod.Student.DoesNotExist:
     student.average_mark = 3.35
     student.save()
     print("Student " + student.name + " created")
+
+try:
+    seminar = hmod.Seminar.objects.get(seminar_num=1)
+    print(seminar.name + " Seminar already exists")
+except hmod.Seminar.DoesNotExist:
+    seminar = hmod.Seminar()
+    seminar.name = "Lifting X-Wing"
+    seminar.seminar_num = 1
+    seminar.fees = 100
+    seminar.professor = hmod.Professor.objects.get(name="Yoda")
+    seminar.save()
+    print(seminar.name + " Seminar created")
+
+try:
+    seminar = hmod.Seminar.objects.get(seminar_num=2)
+    print(seminar.name + " Seminar already exists")
+except hmod.Seminar.DoesNotExist:
+    seminar = hmod.Seminar()
+    seminar.name = "Force Mind Control 101"
+    seminar.seminar_num = 2
+    seminar.fees = 100
+    seminar.professor = hmod.Professor.objects.get(name="Yoda")
+    seminar.save()
+    print(seminar.name + " Seminar created")
+
