@@ -35,4 +35,3 @@ class WaitingList(models.Model):
     id = models.AutoField(primary_key=True)
     student = models.ForeignKey(to=Student, blank=False)
     seminar = models.ForeignKey(to=Seminar, blank=False)
-

@@ -83,7 +83,21 @@ except hmod.Seminar.DoesNotExist:
     seminar.name = "Force Mind Control 101"
     seminar.seminar_num = 2
     seminar.fees = 100
-    seminar.professor = hmod.Professor.objects.get(name="Yoda")
+    seminar.professor = hmod.Professor.objects.get(name="Obi-Wan")
     seminar.save()
     print(seminar.name + " Seminar created")
+
+try:
+    enrollment = hmod.Enrollment.objects.get(student=hmod.Student.objects.get(name='Luke Skywalker'),
+                      seminar=hmod.Seminar.objects.get(seminar_num=1))
+    print(enrollment.student.name + " is already enrolled in " + enrollment.seminar.name)
+except hmod.Enrollment.DoesNotExist:
+    enrollment = hmod.Enrollment()
+    enrollment.student = hmod.Student.objects.get(name='Luke Skywalker')
+    enrollment.seminar = hmod.Seminar.objects.get(seminar_num=1)
+    enrollment.marks_received = 4.0
+    enrollment.save()
+    print(enrollment.student.name + " is now enrolled in " + enrollment.seminar.name)
+
+
 
