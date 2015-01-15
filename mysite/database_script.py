@@ -64,6 +64,20 @@ except hmod.Student.DoesNotExist:
     print("Student " + student.name + " created")
 
 try:
+    student = hmod.Student.objects.get(email='leia@jedi.com')
+    print("Student " + student.name + " already exists")
+except hmod.Student.DoesNotExist:
+    student = hmod.Student()
+    student.name = "Leia Organa"
+    student.address = "Alderaan"
+    student.email = "leia@jedi.com"
+    student.phone = "4567890123"
+    student.student_num = '34567'
+    student.average_mark = 4.0
+    student.save()
+    print("Student " + student.name + " created")
+
+try:
     seminar = hmod.Seminar.objects.get(seminar_num=1)
     print(seminar.name + " Seminar already exists")
 except hmod.Seminar.DoesNotExist:
@@ -99,5 +113,48 @@ except hmod.Enrollment.DoesNotExist:
     enrollment.save()
     print(enrollment.student.name + " is now enrolled in " + enrollment.seminar.name)
 
+try:
+    enrollment = hmod.Enrollment.objects.get(student=hmod.Student.objects.get(name='Han Solo'),
+                      seminar=hmod.Seminar.objects.get(seminar_num=1))
+    print(enrollment.student.name + " is already enrolled in " + enrollment.seminar.name)
+except hmod.Enrollment.DoesNotExist:
+    enrollment = hmod.Enrollment()
+    enrollment.student = hmod.Student.objects.get(name='Han Solo')
+    enrollment.seminar = hmod.Seminar.objects.get(seminar_num=1)
+    enrollment.marks_received = 4.0
+    enrollment.save()
+    print(enrollment.student.name + " is now enrolled in " + enrollment.seminar.name)
 
+try:
+    enrollment = hmod.Enrollment.objects.get(student=hmod.Student.objects.get(name='Luke Skywalker'),
+                      seminar=hmod.Seminar.objects.get(seminar_num=2))
+    print(enrollment.student.name + " is already enrolled in " + enrollment.seminar.name)
+except hmod.Enrollment.DoesNotExist:
+    enrollment = hmod.Enrollment()
+    enrollment.student = hmod.Student.objects.get(name='Luke Skywalker')
+    enrollment.seminar = hmod.Seminar.objects.get(seminar_num=2)
+    enrollment.marks_received = 4.0
+    enrollment.save()
+    print(enrollment.student.name + " is now enrolled in " + enrollment.seminar.name)
 
+try:
+    wait = hmod.WaitingList.objects.get(student=hmod.Student.objects.get(name='Han Solo'),
+                      seminar=hmod.Seminar.objects.get(seminar_num=2))
+    print(wait.student.name + " is already on the waiting list for " + wait.seminar.name)
+except hmod.WaitingList.DoesNotExist:
+    wait = hmod.WaitingList()
+    wait.student = hmod.Student.objects.get(name='Han Solo')
+    wait.seminar = hmod.Seminar.objects.get(seminar_num=2)
+    wait.save()
+    print(wait.student.name + " is now on the waiting list for " + wait.seminar.name)
+
+try:
+    wait = hmod.WaitingList.objects.get(student=hmod.Student.objects.get(name='Leia Organa'),
+                      seminar=hmod.Seminar.objects.get(seminar_num=1))
+    print(wait.student.name + " is already on the waiting list for " + wait.seminar.name)
+except hmod.WaitingList.DoesNotExist:
+    wait = hmod.WaitingList()
+    wait.student = hmod.Student.objects.get(name='Leia Organa')
+    wait.seminar = hmod.Seminar.objects.get(seminar_num=1)
+    wait.save()
+    print(wait.student.name + " is now on the waiting list for " + wait.seminar.name)
