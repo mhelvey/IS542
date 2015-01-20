@@ -78,6 +78,34 @@ except hmod.Student.DoesNotExist:
     print("Student " + student.name + " created")
 
 try:
+    student = hmod.Student.objects.get(email='michael@jedi.com')
+    print("Student " + student.name + " already exists")
+except hmod.Student.DoesNotExist:
+    student = hmod.Student()
+    student.name = "Michael"
+    student.address = "7201 University Station, Provo UT"
+    student.email = "michael@jedi.com"
+    student.phone = "4567890123"
+    student.student_num = '45678'
+    student.average_mark = 4.0
+    student.save()
+    print("Student " + student.name + " created")
+
+try:
+    student = hmod.Student.objects.get(email='cameron@jedi.com')
+    print("Student " + student.name + " already exists")
+except hmod.Student.DoesNotExist:
+    student = hmod.Student()
+    student.name = "Cameron"
+    student.address = "11029 Bulldog Ave, Provo UT"
+    student.email = "cameron@jedi.com"
+    student.phone = "4567890123"
+    student.student_num = '56789'
+    student.average_mark = 4.0
+    student.save()
+    print("Student " + student.name + " created")
+
+try:
     seminar = hmod.Seminar.objects.get(seminar_num=1)
     print(seminar.name + " Seminar already exists")
 except hmod.Seminar.DoesNotExist:
@@ -98,6 +126,28 @@ except hmod.Seminar.DoesNotExist:
     seminar.seminar_num = 2
     seminar.fees = 100
     seminar.professor = hmod.Professor.objects.get(name="Obi-Wan")
+    seminar.save()
+    print(seminar.name + " Seminar created")
+
+try:
+    seminar = hmod.Seminar.objects.get(seminar_num=3)
+    print(seminar.name + " Seminar already exists")
+except hmod.Seminar.DoesNotExist:
+    seminar = hmod.Seminar()
+    seminar.name = "Force Choke 101"
+    seminar.seminar_num = 3
+    seminar.fees = 1
+    seminar.save()
+    print(seminar.name + " Seminar created")
+
+try:
+    seminar = hmod.Seminar.objects.get(seminar_num=4)
+    print(seminar.name + " Seminar already exists")
+except hmod.Seminar.DoesNotExist:
+    seminar = hmod.Seminar()
+    seminar.name = "Wookie Roar 101"
+    seminar.seminar_num = 4
+    seminar.fees = 0
     seminar.save()
     print(seminar.name + " Seminar created")
 

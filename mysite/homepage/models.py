@@ -23,7 +23,7 @@ class Seminar(models.Model):
     name = models.TextField(max_length=200)
     seminar_num = models.TextField(max_length=30)
     fees = models.DecimalField(max_digits=7, decimal_places=2)
-    professor = models.ForeignKey(to=Professor, blank=True)
+    professor = models.ForeignKey(to=Professor, null=True)
 
 class Enrollment(models.Model):
     id = models.AutoField(primary_key=True)
