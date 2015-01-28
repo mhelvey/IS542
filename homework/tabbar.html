@@ -1,0 +1,16 @@
+<ul class="tab-bar">
+    <a><li>First</li></a>
+    <a class="tab-active"><li>Second</li></a>
+    <a><li>Third</li></a>
+    <a><li>Fourth</li></a>
+    <a><li>Fifth</li></a>
+</ul>
+
+<script>
+    $(function() {
+      $("ul.tab-bar > a").click(function() {
+        $(this).siblings('.tab-active').removeClass('tab-active');
+        $(this).addClass('tab-active');
+      });
+    });
+</script>
