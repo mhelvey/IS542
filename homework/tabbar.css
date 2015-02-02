@@ -1,0 +1,38 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: inline;
+	padding: 10px;
+}
+
+a{ 
+	float: left;
+	font-family: sans-serif;
+    width: 75px;
+    color: #8DB1DF;
+    background-color: #104364;
+    text-align: center;
+	padding: 10px;
+	border-style: solid;
+	border-color: #104364;
+}
+
+.tab-bar a:hover {
+    background-color: #2E72B4;
+	color: #104386;
+	border-style: solid;
+	border-color: #2E72B4;
+	border-bottom: solid black;
+	
+}
+.tab-active {
+    background-color: #2E72B4;
+	color: #104386;
+	border-style: solid;
+	border-color: #2E72B4;
+	border-bottom: solid black;
+	
+}
