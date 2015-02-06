@@ -3,10 +3,25 @@
 <head lang="en">
     {% load staticfiles %}
     <meta charset="UTF-8">
-    <title></title>
+    <title>BaseTemplate</title>
     <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+    {% block subCSS %}{% endblock %}
 </head>
 <body>
+    <header>
+        <div class="header-left">Left Header</div>
+        <div class="header-right">Right Header</div>
+    </header>
+    <main>
+        <div class="column-left">Left Column</div>
+        <div class="column-main">Main Column</div>
+        <div class="column-right">Right Column</div>
+    </main>
+    <footer>
+        <div class="footer">Footer</div>
+    </footer>
 
+
+{% block subJS %}{% endblock %}
 </body>
 </html>
