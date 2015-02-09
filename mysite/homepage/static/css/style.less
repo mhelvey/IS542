@@ -1,0 +1,92 @@
+@mainBlue: #58B3B3;
+@darkBlue: #1E8484;
+@lightBlue: #BEEDED;
+@lightGreen: #6AD96A;
+
+
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* temp for dev */
+//body div {
+//  border: 1px solid black ;
+//  padding: 5px;
+//}
+
+body{
+  margin:0;
+}
+header, main, footer{
+  display: flex;
+}
+
+header {
+//  height: 45px;
+
+
+}
+.column-main{
+  flex: 3;
+  background-color: @mainBlue;
+  text-align: center;
+}
+.header-left{
+  flex: 1;
+  text-align: left;
+  background-color: @darkBlue;
+  font-size: 25px;
+
+}
+.header-right{
+  flex: 1;
+  text-align: right;
+  background-color: @darkBlue;
+}
+.column-left{
+  flex: 1;
+  text-align: left;
+  background-color: @lightGreen;
+  width: 250px;
+}
+.column-right{
+  flex: 1;
+  text-align: right;
+  background-color: @lightGreen;
+  width: 250px;
+}
+.footer{
+  flex: 1;
+  text-align: center;
+  background-color: yellow;
+
+}
+
+.tab-bar {
+  list-style-type: none;
+  display: inline-flex;
+  margin: 0;
+}
+.tab-bar li {
+  padding: 0 15px;
+  height: 100%;
+}
+.tab-bar li a {
+  height: 100%;
+  line-height: 3;
+  color: black;
+}
+.tab-bar li:hover {
+  color: @lightBlue;
+  background-color: @darkBlue;
+  border-bottom: solid 2px @lightBlue;
+}
+.tab-active {
+  color: @lightGreen;
+  background-color: @darkBlue;
+  border-bottom: solid 2px @lightGreen;
+}
+
+.btn-default{
+  background-color: @lightGreen
+}

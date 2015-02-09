@@ -4,23 +4,72 @@
     {% load staticfiles %}
     <meta charset="UTF-8">
     <title>BaseTemplate</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
     <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     {% block subCSS %}{% endblock %}
 </head>
 <body>
     <header>
-        <div class="header-left">Left Header</div>
-        <div class="header-right">Right Header</div>
+        <div class="header-left">
+            <i class="fa fa-subway"></i> mhelvey
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                About <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Our Story</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Careers</a></li>
+              </ul>
+            </div>
+        </div>
+        <div class="header-right">Right Header
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                Account <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Sign out</a></li>
+              </ul>
+            </div>
+
+        </div>
     </header>
     <main>
         <div class="column-left">Left Column</div>
-        <div class="column-main">Main Column</div>
+        <div class="column-main">
+
+            <ul class="tab-bar">
+                <li><a>First</a></li>
+                <li class="tab-active"><a>Second</a></li>
+                <li><a>Third</a></li>
+                <li><a>Fourth</a></li>
+                <li><a>Fifth</a></li>
+            </ul>
+            <br>Main Column
+        </div>
         <div class="column-right">Right Column</div>
     </main>
     <footer>
-        <div class="footer">Footer</div>
+        <div class="footer">
+            <i class="fa fa-copyright"></i> {{ time }} mhelvey inc.
+        </div>
     </footer>
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="{% static 'js/tabbar.js' %}"></script>
 
 {% block subJS %}{% endblock %}
 </body>

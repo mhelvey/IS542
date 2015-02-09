@@ -1,14 +1,14 @@
-ul {
+.tabbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-li {
+.tabbar li {
     display: inline;
 	padding: 10px;
 }
 
-a{ 
+.tabbar a{
 	float: left;
 	font-family: sans-serif;
     width: 75px;
