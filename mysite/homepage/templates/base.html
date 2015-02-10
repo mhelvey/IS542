@@ -6,10 +6,8 @@
     <title>BaseTemplate</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
     <link rel="stylesheet" href="{% static "css/style.css" %}"/>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     {% block subCSS %}{% endblock %}
@@ -29,7 +27,14 @@
               </ul>
             </div>
         </div>
+        <div class="notification">
+            <div class="alert alert-success alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <strong>Notification</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+        </div>
         <div class="header-right">Right Header
+            {% block right_header %}{% endblock %}
             <div class="btn-group">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                 Account <span class="caret"></span>
@@ -42,28 +47,93 @@
                 <li><a href="#">Sign out</a></li>
               </ul>
             </div>
-
         </div>
     </header>
     <main>
         <div class="column-left">
+           {% block left_column %}
             <div class="menu-float">
-                here is some crap
+                <ul class="nav nav-pills nav-stacked">
+                  <li role="presentation"><a href="#">Home</a></li>
+                  <li role="presentation"><a href="#">Profile</a></li>
+                  <li role="presentation"><a href="#">Messages</a></li>
+                </ul>
             </div>
             Left Column
+            {% block left_content %}{% endblock %}
+            {% endblock %}
         </div>
         <div class="column-main">
-
-            <ul class="tab-bar">
-                <li><a>First</a></li>
-                <li class="tab-active"><a>Second</a></li>
-                <li><a>Third</a></li>
-                <li><a>Fourth</a></li>
-                <li><a>Fifth</a></li>
-            </ul>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>Main Column
+            {% block main_content %}
+                <ul class="tab-bar">
+                    <li><a>First</a></li>
+                    <li class="tab-active"><a>Second</a></li>
+                    <li><a>Third</a></li>
+                    <li><a>Fourth</a></li>
+                    <li><a>Fifth</a></li>
+                </ul>
+                <h1>Lorem ipsum</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a aliquam quam.
+                    Suspendisse tempus iaculis augue in convallis. Aliquam sodales quam viverra, dapibus sem ac,
+                    laoreet magna. Nam iaculis ut urna eget convallis. Suspendisse quam mauris, porta eget sodales vel,
+                    ornare ut metus. Praesent eleifend odio arcu, vel pretium sapien posuere id. Morbi tellus sapien,
+                    ullamcorper in dui nec, ornare ultrices turpis. Morbi eget arcu non libero ultricies efficitur.
+                    Mauris lacus tortor, condimentum vel tincidunt ac, volutpat eu dui. Vivamus id hendrerit tellus.
+                    Fusce rhoncus velit tincidunt nisi malesuada, a commodo elit tincidunt. Phasellus efficitur, tortor
+                    nec ultricies tempor, dui felis facilisis metus, sed vulputate diam mauris in metus. Morbi efficitur
+                    ante sed elit convallis rhoncus. Proin id eros tortor. Morbi luctus ut dui et laoreet. Sed euismod
+                    augue vitae ante congue volutpat.
+                </p>
+                <p>
+                    Fusce sapien ipsum, vehicula ut interdum vel, malesuada vitae libero. Vivamus interdum efficitur
+                    dictum. Etiam ornare finibus ligula, eget eleifend felis convallis eu. Donec vehicula in risus ut
+                    congue. Nam sollicitudin aliquet efficitur. Quisque quis orci auctor, suscipit diam ac, molestie
+                    lectus. Phasellus bibendum diam eget velit aliquet mollis. Suspendisse vestibulum tempor ullamcorper.
+                    Ivamus efficitur augue et pellentesque efficitur. Phasellus nec elementum libero. Duis eget
+                    diam porttitor, luctus neque sed, malesuada sem. Vestibulum vestibulum sed elit egestas tempor.
+                </p>
+                <p>
+                    Quisque sollicitudin diam erat. Suspendisse potenti. Aenean ut nulla eu ligula imperdiet feugiat
+                    vitae pretium eros. Aliquam quis diam justo. Sed dictum mi nisl, a ornare elit dictum quis. Donec
+                    posuere lobortis erat, eu condimentum elit elementum ut. Sed vulputate diam sollicitudin ipsum
+                    maximus efficitur. Mauris pretium, felis ac condimentum imperdiet, massa purus dignissim magna,
+                    ac tempor mi libero eget massa. Pellentesque tortor dolor, imperdiet eget justo eget, molestie
+                    consequat purus. Ut malesuada blandit convallis. Morbi in placerat tellus. Curabitur at fringilla
+                    tellus.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a aliquam quam.
+                    Suspendisse tempus iaculis augue in convallis. Aliquam sodales quam viverra, dapibus sem ac,
+                    laoreet magna. Nam iaculis ut urna eget convallis. Suspendisse quam mauris, porta eget sodales vel,
+                    ornare ut metus. Praesent eleifend odio arcu, vel pretium sapien posuere id. Morbi tellus sapien,
+                    ullamcorper in dui nec, ornare ultrices turpis. Morbi eget arcu non libero ultricies efficitur.
+                    Mauris lacus tortor, condimentum vel tincidunt ac, volutpat eu dui. Vivamus id hendrerit tellus.
+                    Fusce rhoncus velit tincidunt nisi malesuada, a commodo elit tincidunt. Phasellus efficitur, tortor
+                    nec ultricies tempor, dui felis facilisis metus, sed vulputate diam mauris in metus. Morbi efficitur
+                    ante sed elit convallis rhoncus. Proin id eros tortor. Morbi luctus ut dui et laoreet. Sed euismod
+                    augue vitae ante congue volutpat.
+                </p>
+                <p>
+                    Fusce sapien ipsum, vehicula ut interdum vel, malesuada vitae libero. Vivamus interdum efficitur
+                    dictum. Etiam ornare finibus ligula, eget eleifend felis convallis eu. Donec vehicula in risus ut
+                    congue. Nam sollicitudin aliquet efficitur. Quisque quis orci auctor, suscipit diam ac, molestie
+                    lectus. Phasellus bibendum diam eget velit aliquet mollis. Suspendisse vestibulum tempor ullamcorper.
+                    Ivamus efficitur augue et pellentesque efficitur. Phasellus nec elementum libero. Duis eget
+                    diam porttitor, luctus neque sed, malesuada sem. Vestibulum vestibulum sed elit egestas tempor.
+                </p>
+                <p>
+                    Quisque sollicitudin diam erat. Suspendisse potenti. Aenean ut nulla eu ligula imperdiet feugiat
+                    vitae pretium eros. Aliquam quis diam justo. Sed dictum mi nisl, a ornare elit dictum quis. Donec
+                    posuere lobortis erat, eu condimentum elit elementum ut. Sed vulputate diam sollicitudin ipsum
+                    maximus efficitur. Mauris pretium, felis ac condimentum imperdiet, massa purus dignissim magna,
+                    ac tempor mi libero eget massa. Pellentesque tortor dolor, imperdiet eget justo eget, molestie
+                    consequat purus. Ut malesuada blandit convallis. Morbi in placerat tellus. Curabitur at fringilla
+                    tellus.
+                </p>
+            {% endblock %}
         </div>
-        <div class="column-right">Right Column</div>
+       <div class="column-right">{% block right_column %}Right Column{% endblock %}</div>
     </main>
     <footer>
         <div class="footer">
@@ -72,9 +142,10 @@
     </footer>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
 
 {% block subJS %}{% endblock %}
 </body>
