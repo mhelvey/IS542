@@ -133,12 +133,19 @@
                 </p>
             {% endblock %}
         </div>
-       <div class="column-right">{% block right_column %}Right Column{% endblock %}</div>
+       <div class="column-right">
+           {% block right_column %}
+               <p>Here is my middleware, 1st time called: {{ mware1 }}</p>
+               <p>Here is my middleware, 2nd time called: {{ mware2 }}</p>
+               <p>Here is my middleware, 3rd time called: {{ mware3 }}</p>
+               <p>check the console to show the other times the function is being called</p>
+           {% endblock %}
+       </div>
     </main>
     <footer>
         <div class="footer">
             <i class="fa fa-copyright"></i> {{ time }} mhelvey inc.
-            {{ mware }}
+
         </div>
     </footer>
 
