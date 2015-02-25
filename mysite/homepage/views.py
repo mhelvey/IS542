@@ -1,13 +1,17 @@
-from django.shortcuts import render
-from django.shortcuts import render_to_response
-from django.template import Context, loader, RequestContext
-from django.http import HttpResponse, HttpResponseRedirect
-
 import datetime
-import requests
+
+from django.template import Context, loader
+from django.http import HttpResponse
+from django import forms
+
+from lib.customform import CustomForm
+from lib.widgets import DatePickWidget
+
 
 # Create your views here.
 l = loader
+
+
 def base(request):
     time = datetime.datetime.now().strftime('%Y')
     t = l.get_template('base.html')
@@ -27,3 +31,20 @@ def base(request):
         'mware3': mware3,
     })
     return HttpResponse(t.render(c))
+
+
+def form(request):
+    form = SampleForm(request)
+    if request.method == 'POST':
+        form = SampleForm(request)
+    t = l.get_template('form.html')
+    c = Context({
+        'form': form,
+    })
+
+    return HttpResponse(t.render(c))
+
+
+class SampleForm(CustomForm):
+    def init(self):
+        self.fields['date'] = forms.DateTimeField(widget=DatePickWidget)

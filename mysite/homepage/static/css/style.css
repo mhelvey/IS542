@@ -1,0 +1,150 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* temp for dev */
+body div {
+  padding: 10px;
+}
+body {
+  margin: 0;
+}
+header,
+main,
+footer {
+  display: flex;
+}
+.column-main {
+  flex: 3;
+  background-color: #58b3b3;
+  text-align: center;
+}
+.header-left {
+  flex: 1;
+  text-align: left;
+  background-color: #1e8484;
+  font-size: 25px;
+}
+.header-right {
+  flex: 1;
+  text-align: right;
+  background-color: #beeded;
+}
+.column-left {
+  flex: 1;
+  text-align: left;
+  background-color: #6ad96a;
+}
+.column-right {
+  flex: 1;
+  text-align: right;
+  background-color: #29af29;
+}
+.footer {
+  flex: 1;
+  text-align: center;
+  background-color: yellow;
+}
+p {
+  text-align: left;
+}
+.notification {
+  position: absolute;
+  z-index: 1;
+}
+.alert-success {
+  color: #beeded;
+  border-color: #1e8484;
+  background-image: linear-gradient(to bottom, #1e8484 0, #1e8484 100%);
+}
+.tab-bar {
+  list-style-type: none;
+  display: inline-flex;
+  margin: 0;
+}
+.tab-bar li {
+  padding: 0 15px;
+  height: 100%;
+}
+.tab-bar li a {
+  height: 100%;
+  line-height: 3;
+  color: inherit;
+}
+.tab-bar li:hover {
+  color: #beeded;
+  background-color: #1e8484;
+  border-bottom: solid 2px #beeded;
+}
+.tab-active {
+  color: #6ad96a;
+  background-color: #1e8484;
+  border-bottom: solid 2px #6ad96a;
+}
+.fixed {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 250px;
+  text-align: left;
+}
+@media screen and (max-width: 480px) {
+  main,
+  header {
+    flex-direction: column;
+  }
+  .header-left {
+    order: 1;
+    text-align: center;
+  }
+  .header-right {
+    order: 2;
+    text-align: center;
+  }
+  .column-main {
+    order: 1;
+  }
+  .column-left {
+    order: 2;
+  }
+  .column-right {
+    order: 3;
+  }
+  .fixed {
+    position: relative;
+    text-align: center;
+    width: inherit;
+  }
+}
+@media screen and (max-width: 760px) {
+  main {
+    flex-direction: column;
+  }
+  .column-main {
+    order: 1;
+  }
+  .column-left {
+    order: 2;
+    text-align: center;
+  }
+  .column-right {
+    order: 3;
+    text-align: center;
+  }
+  .fixed {
+    position: relative;
+    text-align: center;
+    width: inherit;
+  }
+}
+@media screen and (min-width: 760px) {
+  .fixed {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 250px;
+    text-align: left;
+  }
+}
+.nav-pills {
+  color: #58b3b3;
+}
