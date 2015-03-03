@@ -21,13 +21,13 @@ footer {
 .header-left {
   flex: 1;
   text-align: left;
-  background-color: #1e8484;
+  background-color: #6ad96a;
   font-size: 25px;
 }
 .header-right {
   flex: 1;
   text-align: right;
-  background-color: #beeded;
+  background-color: #6ad96a;
 }
 .column-left {
   flex: 1;
@@ -37,12 +37,12 @@ footer {
 .column-right {
   flex: 1;
   text-align: right;
-  background-color: #29af29;
+  background-color: #6ad96a;
 }
 .footer {
   flex: 1;
   text-align: center;
-  background-color: yellow;
+  background-color: #1e8484;
 }
 p {
   text-align: left;
