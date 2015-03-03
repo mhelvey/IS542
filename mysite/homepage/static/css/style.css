@@ -14,7 +14,7 @@ footer {
   display: flex;
 }
 .column-main {
-  flex: 3;
+  flex: 5;
   background-color: #58b3b3;
   text-align: center;
 }

@@ -35,3 +35,12 @@ class WaitingList(models.Model):
     id = models.AutoField(primary_key=True)
     student = models.ForeignKey(to=Student, blank=False)
     seminar = models.ForeignKey(to=Seminar, blank=False)
+
+
+class GalleryImage(models.Model):
+    id = models.AutoField(primary_key=True)
+    filename = models.TextField(max_length=500)
+    file_path = models.TextField(max_length=500)
+    size = models.DecimalField(max_digits=7, decimal_places=2)
+    mime_type = models.TextField(max_length=25)
+    title = models.TextField(max_length=40)

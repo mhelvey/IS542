@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block subCSS %}
+    <link rel="stylesheet" href="{% static 'css/gallery.css' %}"/>
+{% endblock %}
+{% block main_content %}
+   {% for image in images %}
+    <div class="gallery">
+       <img class="thumbnail" src={% static image.file_path %}/>
+    </div>
+    {% endfor %}
+{% endblock %}
+
+{% block right_column %}
+{% endblock %}
+{% block subJS %}
+<script>
+$(".gallery").hover(function(){
+    $("img").toggleClass("rollover");
+    console.log('hellow');
+});
+</script>
+{% endblock %}

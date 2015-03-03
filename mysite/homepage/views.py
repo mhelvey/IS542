@@ -3,7 +3,7 @@ import datetime
 from django.template import Context, loader
 from django.http import HttpResponse
 from django import forms
-
+from homepage import models as hmod
 from lib.customform import CustomForm
 from lib.widgets import DatePickWidget
 
@@ -48,3 +48,13 @@ def form(request):
 class SampleForm(CustomForm):
     def init(self):
         self.fields['date'] = forms.DateTimeField(widget=DatePickWidget)
+
+
+def gallery(request):
+    images = hmod.GalleryImage.objects.all()
+    t = l.get_template('gallery.html')
+    c = Context({
+        'images': images,
+    })
+
+    return HttpResponse(t.render(c))

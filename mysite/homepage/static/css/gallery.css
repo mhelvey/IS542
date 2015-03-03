@@ -1,0 +1,16 @@
+.thumbnail {
+  max-width: 195px;
+  max-height: 195px;
+}
+.gallery {
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  padding: 0;
+  margin: 5px;
+}
+.rollover {
+  max-width: 250px;
+  max-height: 250px;
+  margin: -20px;
+}
