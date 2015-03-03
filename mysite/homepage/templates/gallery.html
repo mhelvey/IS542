@@ -8,34 +8,21 @@
 {% block main_content %}
     <h1>Gallery Demo</h1>
    {% for image in images %}
-    <div class="gallery">
-       <img class="thumbnail" src={% static image.file_path %}/>
-    </div>
+    <a href={% static image.file_path %} download>
+        <div class="gallery">
+            <img class="thumbnail" src={% static image.file_path %}/>
+            <span> {{ image.title }}</span>
+        </div>
+   </a>
     {% endfor %}
 {% endblock %}
 
 {% block right_column %}
 {% endblock %}
 {% block subJS %}
-    <script type="text/javascript" src="/static/js/datepicker.js"></script>
     <script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
-<script>
-$("img").hover(function(){
-    $(this).toggleClass("rollover", 100);
-{#    $(this).animate({#}
-{#        height:'300',#}
-{#        width: '300',#}
-{#        margin: '-50px',#}
-{#        position: 'absolute'#}
-{#    });#}
-});
-{#  $(function() {#}
-{#    $( "img" ).hover(function() {#}
-{#      $( this ).addClass( "rollover", 1000 );#}
-{#    });#}
-{##}
-{#  }function() {#}
-{#    $("img").mouseout().removeClass("rollover");#}
-{#    });#}
-</script>
+    <script type="text/javascript" src="{% static 'js/gallery_plugin.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/gallery.js' %}"></script>
+
+
 {% endblock %}

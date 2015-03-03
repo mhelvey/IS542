@@ -12,11 +12,36 @@
   padding: 0;
   margin: 5px;
 
+  span{
+    display: none;
+    margin: -160px;
+    margin-top: 200px;
+    font-size: 20px;
+
+    &.display-span{
+      display: inline-block;
+      position: absolute;
+      background-color: #104364;
+      width: 320px;
+      color: #1c94c4;
+      z-index: 3;
+      border-radius: 5px;
+    }
+  }
+
 }
 .rollover {
+  position: absolute;
+  z-index: 1;
   max-width: @width + 100;
   max-height: @width + 100;
   margin: -50px;
-  position: absolute;
   box-shadow: 0px 0px 5px 5px darkgrey;
 }
+
+.hide-span {
+  display: none;
+  margin: 10px;
+  z-index: 2;
+}
+
