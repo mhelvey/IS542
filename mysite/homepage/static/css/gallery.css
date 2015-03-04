@@ -30,7 +30,7 @@
   max-width: 300px;
   max-height: 300px;
   margin: -50px;
-  box-shadow: 0px 0px 5px 5px darkgrey;
+  box-shadow: 0px 0px 5px 3px #3a3a3a;
 }
 .hide-span {
   display: none;
