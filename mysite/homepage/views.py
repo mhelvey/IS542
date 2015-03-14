@@ -51,10 +51,36 @@ class SampleForm(CustomForm):
 
 
 def gallery(request):
-    images = hmod.GalleryImage.objects.all()
+    images = hmod.GalleryImage .objects.all()
     t = l.get_template('gallery.html')
     c = Context({
         'images': images,
     })
 
     return HttpResponse(t.render(c))
+
+
+def table(request):
+
+    t = l.get_template('table.html')
+    c = Context({
+
+    })
+    return HttpResponse(t.render(c))
+
+ROWS_PER_PAGE = 5
+
+def get_table(request):
+    c = Context({
+
+    })
+    try:
+        page = int(request.urlparams[0])
+    except ValueError:
+        page = 0
+
+    users = Table()
+    for i in range(page * ROWS_PER_PAGE, (page+1) * ROWS_PER_PAGE):
+        users.append([
+
+        ])
