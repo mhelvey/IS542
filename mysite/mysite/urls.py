@@ -12,6 +12,8 @@ urlpatterns = patterns('',
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^homepage/form', 'homepage.views.form'),
+    url(r'^homepage/table/page/(?P<tpage>\d+)', 'homepage.views.table'),
+    url(r'^homepage/table/', 'homepage.views.table'),
     url(r'^homepage/gallery', 'homepage.views.gallery'),
     url(r'^homepage/', 'homepage.views.base'),
 
@@ -21,3 +23,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
 )
+
+
+#     url(r'^table/page/(?P<page>\d+)/$', 'home.views.table'),

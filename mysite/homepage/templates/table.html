@@ -7,11 +7,11 @@
 {% block main_content %}
     <h1>Table</h1>
     <div id="table_container" data-page="{{ initial_page }}">
-        Table goes here
+        {{ users }}
     </div>
     <div id="button_container">
         <button class="btn btn-default" id="prev_page_button">&larr; Previous</button>
-        <button class="btn btn-default" id="next_page_button">Next &larr;</button>
+        <button class="btn btn-default" id="next_page_button">Next &rarr;</button>
     </div>
 {% endblock %}
 
@@ -19,6 +19,6 @@
 {% endblock %}
 {% block subJS %}
 
-
+<script type="text/javascript" src="{% static 'js/table.js' %}"></script>
 
 {% endblock %}

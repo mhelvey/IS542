@@ -43,3 +43,8 @@ for name in names:
         image.mime_type = "image/jpg"
         image.save()
         print("Image " + image.title + " created")
+
+for i in range(500):
+    u = hmod.User.objects.get(first_name=str(i))
+    u.email = '%s@test.com' % i
+    u.save()

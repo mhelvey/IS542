@@ -44,3 +44,9 @@ class GalleryImage(models.Model):
     size = models.DecimalField(max_digits=7, decimal_places=2)
     mime_type = models.TextField(max_length=25)
     title = models.TextField(max_length=40)
+
+
+class User (models.Model):
+    first_name = models.TextField(blank=True, null=True)
+    last_name = models.TextField(blank=True, null=True)
+    email = models.TextField(blank=True, null=True)
