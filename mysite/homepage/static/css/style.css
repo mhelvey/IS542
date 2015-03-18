@@ -15,34 +15,34 @@ footer {
 }
 .column-main {
   flex: 5;
-  background-color: #58b3b3;
+  background-color: #beeded;
   text-align: center;
 }
 .header-left {
   flex: 1;
   text-align: left;
-  background-color: #6ad96a;
+  background-color: #58b3b3;
   font-size: 25px;
 }
 .header-right {
   flex: 1;
   text-align: right;
-  background-color: #6ad96a;
+  background-color: #58b3b3;
 }
 .column-left {
   flex: 1;
   text-align: left;
-  background-color: #6ad96a;
+  background-color: #58b3b3;
 }
 .column-right {
   flex: 1;
   text-align: right;
-  background-color: #6ad96a;
+  background-color: #58b3b3;
 }
 .footer {
   flex: 1;
   text-align: center;
-  background-color: #1e8484;
+  background-color: #58b3b3;
 }
 p {
   text-align: left;
@@ -146,5 +146,5 @@ p {
   }
 }
 .nav-pills {
-  color: #58b3b3;
+  color: #1e8484;
 }

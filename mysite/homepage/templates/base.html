@@ -15,7 +15,7 @@
 <body>
     <header>
         <div class="header-left">
-            <i class="fa fa-subway"></i> mhelvey
+            <a href="/homepage/"<i class="fa fa-subway"></i> mhelvey</a>
             <div class="btn-group">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                 About <span class="caret"></span>
@@ -27,12 +27,12 @@
               </ul>
             </div>
         </div>
-        <div class="notification">
-            <div class="alert alert-success alert-dismissible" role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <strong>Notification</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </div>
-        </div>
+{#        <div class="notification">#}
+{#            <div class="alert alert-success alert-dismissible" role="alert">#}
+{#              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>#}
+{#              <strong>Notification</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.#}
+{#            </div>#}
+{#        </div>#}
         <div class="header-right">Right Header
             {% block right_header %}{% endblock %}
             <div class="btn-group">
@@ -56,7 +56,7 @@
                 <ul class="nav nav-pills nav-stacked">
                   <li role="presentation"><a href="/homepage/form">Form</a></li>
                   <li role="presentation"><a href="/homepage/gallery">Gallery</a></li>
-                  <li role="presentation"><a href="#">Messages</a></li>
+                  <li role="presentation"><a href="/homepage/table/">Table Demo</a></li>
                 </ul>
             </div>
             Left Column

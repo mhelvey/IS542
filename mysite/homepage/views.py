@@ -4,11 +4,10 @@ from django.template import Context, loader
 from django.http import HttpResponse
 from django import forms
 from homepage import models as hmod
-from django.utils.html import format_html
 from django.http import JsonResponse
-# from lib.customform import CustomForm
-# from lib.widgets import DatePickWidget
-# from lib.table import Table
+from lib.customform import CustomForm
+from lib.widgets import DatePickWidget
+from lib.table import Table
 
 
 # Create your views here.
@@ -30,21 +29,21 @@ def base(request):
     return HttpResponse(t.render(c))
 
 
-# def form(request):
-#     form = SampleForm(request)
-#     if request.method == 'POST':
-#         form = SampleForm(request)
-#     t = l.get_template('form.html')
-#     c = Context({
-#         'form': form,
-#     })
-#
-#     return HttpResponse(t.render(c))
-#
-#
-# class SampleForm(CustomForm):
-#     def init(self):
-#         self.fields['date'] = forms.DateTimeField(widget=DatePickWidget)
+def form(request):
+    form = SampleForm(request)
+    if request.method == 'POST':
+        form = SampleForm(request)
+    t = l.get_template('form.html')
+    c = Context({
+        'form': form,
+    })
+
+    return HttpResponse(t.render(c))
+
+
+class SampleForm(CustomForm):
+    def init(self):
+        self.fields['date'] = forms.DateTimeField(widget=DatePickWidget)
 
 
 def gallery(request):
@@ -97,29 +96,7 @@ def get_table(request, tpage):
     # }
     return params
 
-class Table(list):
 
-    headers = ['First Name', 'Last Name', 'Email Address']
-
-
-    def __str__(self):
-        html = []
-        html.append('<table class="table table-bordered table-striped">')
-
-        # wirte headers
-        html.append('<tr>')
-        for item in self.headers:
-            html.append('<th>{}</th>'.format(item))
-        html.append('</tr>')
-
-        # write the data
-        for row in self:
-            html.append('<tr>')
-            for item in row:
-                html.append('<td>{}</td>'.format(item))
-            html.append('</tr>')
-        html.append('</table>')
-        return format_html(''.join(html))
 
 
 class CustomTable(Table):
