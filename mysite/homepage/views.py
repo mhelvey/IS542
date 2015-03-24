@@ -8,6 +8,7 @@ from django.http import JsonResponse
 from lib.customform import CustomForm
 from lib.widgets import DatePickWidget
 from lib.table import Table
+import os.path
 
 
 # Create your views here.
@@ -97,8 +98,35 @@ def get_table(request, tpage):
     return params
 
 
-
-
 class CustomTable(Table):
     headers = ['First Name', 'Last Name', 'Email Address']
     endpoint = '/table/page/'
+
+
+def uploader(request):
+    t = l.get_template('uploader.html')
+    form = UploaderForm()
+    if request.method == 'POST':
+        form = UploaderForm(request.POST)
+        if form.is_valid():
+            print('>>>>>>>>>', form.cleaned_data['upload_fullname'])
+            form = UploaderForm()
+    c = Context({
+        'form': form,
+    })
+
+    return HttpResponse(t.render(c))
+
+class UploaderForm(forms.Form):
+    name = forms.CharField()
+    upload_fullname = forms.CharField() # add widget=forms.HiddenInput
+    uploadfile = forms.FileField(required=False)
+
+
+def upload(request):
+    f = request.FILES['uploadfile']
+    fullname = os.path.join('/tmp/uploaded_files', f.name)
+    with open(fullname, 'wb') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
+    return HttpResponse(fullname)
